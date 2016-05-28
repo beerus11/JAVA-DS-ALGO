@@ -1,63 +1,66 @@
-package llist;
 
+/**
+ *@author     Anurag Goel
+ * Reverse Linked List Using Recursion
+ */
 public class ReverseLinkedList {
-	public static void main(String args[]) {
-		Node head = new Node(1);
-		head.setNext(2);
-		head.getNext().setNext(3);
-		head.getNext().getNext().setNext(4);
-		head.getNext().getNext().getNext().setNext(4);
-		head.getNext().getNext().getNext().getNext().setNext(5);
-		Node currentNode = head;
-		Node prevNode, nextNode;
-		currentNode = Reverse(null, head);
-		while (currentNode != null) {
-			System.out.println("" + currentNode.getData());
-			currentNode = currentNode.getNext();
-		}
+
+	static class Node
+	{
+		int data;
+		Node next;
+	}
+	
+	/**
+	 * Main Method
+	 *
+	 * @param      args  The args
+	 */
+	public static void main(String[] args) {
+		Node head = new Node();
+		head.data=1;
+		Node node1 = new Node();
+		node1.data=2;
+		Node node2 = new Node();
+		node2.data=3;
+		Node node3 = new Node();
+		node3.data=4;
+		head.next=node1;
+		node1.next=node2;
+		node2.next=node3;
+		node3.next=null;
+		printList(Reverse(head));
+		
+	}
+
+/**
+ * Reverse Linked List
+ *
+ * @param      head  The head
+ */
+	private static Node Reverse(Node head)
+	{
+		if(head==null || head.next==null)
+			return head;
+		Node nextNode = head.next;
+		head.next=null;
+		Node node = Reverse(nextNode);
+		nextNode.next=head;
+		return node;
 
 	}
 
-	public static Node Reverse(Node prev, Node currentNode) {
-		if (currentNode.getNext() == null) {
-			currentNode.setNext(prev);
-			return currentNode;
-		}
-		Node nextNode = currentNode.getNext();
-		currentNode.setNext(prev);
-		return Reverse(currentNode, nextNode);
-	}
+	/**
+ * Print All Elements of Linked List
+ *
+ * @param      Head of Linked List
+ */
+ public static void printList(Node node) {
+  Node currentNode = node;
+  while (currentNode != null) {
+   System.out.println(currentNode.data);
+   currentNode = currentNode.next;
+  }
+}
 
-	public static class Node {
-		private int data;
-		private Node next;
-
-		Node(int data) {
-			this.data = data;
-			next = null;
-		}
-
-		public int getData() {
-			return this.data;
-		}
-
-		public int setData(int data) {
-			return this.data = data;
-		}
-
-		public void setNext(int data) {
-
-			this.next = new Node(data);
-		}
-
-		public void setNext(Node node) {
-
-			this.next = node;
-		}
-
-		public Node getNext() {
-			return this.next;
-		}
-
-	}
 }
