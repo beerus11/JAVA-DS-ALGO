@@ -1,8 +1,15 @@
+/**
+ *@author     Anurag Goel
+ * Print All Elements of Linked List
+ */
 class PrintElements {
  static class Node {
   int data;
   Node next;
  }
+ /**
+  * Main Method
+  */
  public static void main(String args[]) {
   Node node1 = new Node();
   node1.data = 1;
@@ -16,7 +23,11 @@ class PrintElements {
   printList(node1);
 
  }
-
+/**
+ * Print All Elements of Linked List
+ *
+ * @param      node  Head node
+ */
  public static void printList(Node node) {
   Node currentNode = node;
   while (currentNode != null) {

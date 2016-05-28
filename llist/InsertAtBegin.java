@@ -11,7 +11,7 @@ class InsertAtBegin {
   * Main Method
   */
  public static void main(String args[]) {
-  Node node = insert(insert(insert(null, 1), 2), 3);
+  Node node = insert(insert(insert(insert(null, 1), 2), 3),4);
   printList(node);
 
  }

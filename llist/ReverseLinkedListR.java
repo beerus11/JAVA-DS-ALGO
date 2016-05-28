@@ -1,9 +1,9 @@
 
 /**
  *@author     Anurag Goel
- * Reverse Linked List  
+ * Reverse Linked List Using Recursion
  */
-public class ReverseLinkedList{
+public class ReverseLinkedListR{
 
 	static class Node
 	{
@@ -40,16 +40,13 @@ public class ReverseLinkedList{
  */
 	private static Node Reverse(Node head)
 	{
-		Node nextNode=null, temp=null;
-	
-		while(head!=null)
-		{
-			nextNode=head.next;
-			head.next=temp;
-			temp=head;
-			head=nextNode;
-		}
-		return temp;
+		if(head==null || head.next==null)
+			return head;
+		Node nextNode = head.next;
+		head.next=null;
+		Node node = Reverse(nextNode);
+		nextNode.next=head;
+		return node;
 
 	}
 
