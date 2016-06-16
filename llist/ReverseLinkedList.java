@@ -1,7 +1,7 @@
 
 /**
  *@author     Anurag Goel
- * Reverse Linked List  
+ * Reverse Linked List  Iteration Method
  */
 public class ReverseLinkedList{
 

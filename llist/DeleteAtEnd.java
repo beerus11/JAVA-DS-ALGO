@@ -1,7 +1,7 @@
 /**
  * @author     Anurag Goel
  */
-class DeleteAtBegin {
+class DeleteAtEnd{
  static class Node {
   int data;
   Node next;
@@ -20,10 +20,12 @@ class DeleteAtBegin {
  }
 
  public static Node delete(Node head) {
-  Node temp= head;
-  Node currentNode= temp.next;
-  temp=null;
-  return currentNode;
+  Node currentNode= head;
+  while (currentNode.next.next != null) {
+   currentNode = currentNode.next;
+  }
+ currentNode.next=null;
+  return head;
  
  }
 
