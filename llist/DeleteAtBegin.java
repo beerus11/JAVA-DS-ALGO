@@ -16,7 +16,7 @@ class DeleteAtBegin {
   node1.next = node2;
   node2.next = node3;
   node3.next = null;
-  printList(delete(node1)); 
+  printList(delete(node1));
  }
 
  public static Node delete(Node head) {
@@ -24,7 +24,7 @@ class DeleteAtBegin {
   Node currentNode= temp.next;
   temp=null;
   return currentNode;
- 
+
  }
 
 
