@@ -1,5 +1,5 @@
 ## JAVA-DS-ALGO
-This Repository contains some awesome collection of Data-Stucture & Algorithms programs with their Full Source Code in JAVA.
+This Repository contains some awesome collection of Data-Structure & Algorithms programs with their Full Source Code in JAVA.
 
 ## Content
 1. [Linked List](https://github.com/thechampanurag/JAVA-DS-ALGO/tree/master/llist)
