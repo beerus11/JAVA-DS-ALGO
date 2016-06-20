@@ -6,9 +6,9 @@ This Repository contains some awesome collection of Data-Stucture & Algorithms p
 2. [Stacks](https://github.com/thechampanurag/JAVA-DS-ALGO/tree/master/stacks)
 3. [Queues](https://github.com/thechampanurag/JAVA-DS-ALGO/tree/master/queues)
 4. [Trees](https://github.com/thechampanurag/JAVA-DS-ALGO/tree/master/trees)
-5. Graph[https://github.com/thechampanurag/JAVA-DS-ALGO/tree/master/graph)
-6. Sorting
-7. Searching
+5. [Graph](https://github.com/thechampanurag/JAVA-DS-ALGO/tree/master/graph)
+6. [Sorting](https://github.com/thechampanurag/JAVA-DS-ALGO/tree/master/sorting)
+7. [Searching](https://github.com/thechampanurag/JAVA-DS-ALGO/tree/master/searching)
 8. Priority Queues & Heaps
 9. String Algorithms
 10. Greedy Algorithms
