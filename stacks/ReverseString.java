@@ -6,8 +6,7 @@ import java.util.Stack;
 public class ReverseString {
 	public static void main(String args[]) {
 		Stack<Character> stack = new Stack<Character>();
-		Scanner obj = new Scanner(System.in);
-		String result="";
+		String result="My name is Anurag Goel.";
 		char exp[] = obj.next().toCharArray();
 		for (char e : exp) {
 			stack.push(e);

@@ -1,50 +1,69 @@
-package stacks;
 
 /**
- * 
+ *
  * @author Anurag
- * 
- * 
+ *
+ *
  */
-public class ArrayStack {
+public class ArrayStack{
+
+	private int array[];
 	private int top;
 	private int capacity;
-	private int[] array;
 
-	public ArrayStack(int cap) {
-		// TODO Auto-generated constructor stub
-		this.capacity = cap;
-		array = new int[capacity];
-		top = -1;
+ArrayStack(int capacity)
+{
+	this.capacity=capacity;
+	this.array=new int[capacity];
+	top=-1;
+}
+public boolean isEmpty()
+{
+	return top==-1?true:false;
+}
+public boolean isFull()
+{
+	return top==capacity-1?true:false;
+}
+public int Top()
+{
+	if (top==-1)
+	{
+		System.out.println("Stack is Empty");
+	return -1;
+}
+	return array[top];
+}
+
+public void push(int e)
+{
+	if (top==capacity-1)
+	{
+		System.out.println("Stack is Full !");
+		return;
 	}
+	array[++top]=e;
+	return;
+}
 
-	public boolean isEmpty() {
-		return (top == -1) ? true : false;
+public int pop()
+{
+	if (top==-1)
+	{
+		System.out.println("Stack is Empty !");
+		return -1;
 	}
-
-	public boolean isStackFull() {
-		return (top == capacity - 1) ? true : false;
-	}
-
-	public void push(int data) {
-		if (isStackFull())
-			System.out.println("Stack Overflow");
-		else
-			array[++top] = data;
-
-	}
-
-	public int pop() {
-		if (isEmpty()) {
-			System.out.println("Stack is Empty");
-			return 0;
-		} else {
-			return array[top--];
+	return array[top--];
+}
+	public static void main(String[] args) {
+		ArrayStack stack = new ArrayStack(5);
+		stack.push(1);stack.push(2);stack.push(3);stack.push(4);stack.push(5);stack.push(6);
+		System.out.println("Stack is Full :: "+stack.isFull());
+		while(!stack.isEmpty())
+		{
+			System.out.println(""+stack.pop());
 		}
-	}
-
-	public void deleteStack() {
-		top = -1;
+		System.out.println("Stack is Empty :: "+stack.isEmpty());
 
 	}
 }
