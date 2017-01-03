@@ -1,11 +1,11 @@
 class FindDiameter
 {
-  static class Node
+  static class Tree
   {
     int data;
-    Node left;
-    Node right;
-    Node(int data)
+    Tree left;
+    Tree right;
+    Tree(int data)
     {
       this.data=data;
       left=right=null;
@@ -13,25 +13,31 @@ class FindDiameter
   }
 
   public static void main(String[] args) {
-    Node tree = new Node(1);
-    tree.left=new Node(2);
-    tree.left.left=new Node(4);
-    tree.right=new Node(3);
-    tree.right.left=new Node(5);
-    tree.right.left.right=new Node(7);
-    tree.right.left.right.left=new Node(9);
-    tree.right.right=new Node(6);
-    tree.right.right.right=new Node(8);
-    tree.right.right.right.right=new Node(10);
-    System.out.println("Diameter :: "+DiameterOfTree(tree));
+    Tree tree = new Tree(1);
+    tree.left = new Tree(2);
+    tree.right = new Tree(3);
+    tree.left.left = new Tree(4);
+    tree.left.right = new Tree(5);
+    System.out.println("Diameter :: "+diameter(tree));
   }
 
-  static int DiameterOfTree(Node node)
-  {
-    if(node==null)
-    return 0;
-    int left=DiameterOfTree(node.left);
-    int right=DiameterOfTree(node.right);
-      return Math.max(left,right)+1;
-  }
+static  int diameter(Tree root)
+    {
+        /* base case if tree is empty */
+        if (root == null)
+            return 0;
+        int lheight = height(root.left);
+        int rheight = height(root.right);
+        int ldiameter = diameter(root.left);
+        int rdiameter = diameter(root.right);
+        return Math.max(lheight + rheight + 1,Math.max(ldiameter, rdiameter));
+    }
+
+  static int height(Tree node)
+    {
+        /* base case tree is empty */
+        if (node == null)
+            return 0;
+        return (1 + Math.max(height(node.left), height(node.right)));
+    }
 }
