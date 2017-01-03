@@ -2,7 +2,7 @@
 
 ## Content
 1. [Insertion]()
-2. 
+
 ## Author
 [Anurag Goel](http://www.anuraggoel.in)
 
